@@ -32,3 +32,8 @@ class Battlefield:
         dinosaur = self.dinosaur
         if robot.health == 0:
             print(f'{dinosaur.name} won!')
+        else:
+            dinosaur.health == 0
+            print(f'{robot.name} won!')
+
+        
