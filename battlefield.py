@@ -9,6 +9,9 @@ class Battlefield:
     def run_game(self):
         pass
 
+    def display_welcome(self):
+        print('Welcome to Robots vs Dinosaurs!')
+
     def battle_phase(self):
         pass
 
