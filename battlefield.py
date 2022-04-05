@@ -17,22 +17,22 @@ class Battlefield:
     def battle_phase(self):
         robot = self.robot
         dinosaur = self.dinosaur
-        while robot.health > 0 or dinosaur.health > 0:
+        while robot.health > 0 and dinosaur.health > 0:
             robot.attack(dinosaur)
-            dinosaur.attack(robot)
-            if robot.health <= 0:
-                print(f'{robot.name} has been knocked out.')
-                break
-            elif dinosaur.health <= 0:
-                print(f'{self.dinosaur.name} has been knocked out!')
-                break
+            if dinosaur.health <= 0:
+                print(f'{dinosaur.name} has been knocked out.')
+                break   
+            elif dinosaur.attack(robot):
+                if robot.health <= 0:
+                    print(f'{robot.name} has been knocked out!')
+                    break
             
     
     def display_winner(self):
-        if self.robot.health == 0:
+        if self.robot.health <= 0:
             print(f'{self.dinosaur.name} won!')
         else:
-            self.dinosaur.health == 0
+            self.dinosaur.health <= 0
             print(f'{self.robot.name} won!')
 
         
