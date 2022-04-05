@@ -3,39 +3,37 @@ from dinosaur import Dinosaur
 
 class Battlefield:
     def __init__(self):
-        self.robot = Robot('Optimus Prime')
-        self.dinosaur = Dinosaur('Godzilla', 25)
+        self.robot = Robot
+        self.dinosaur = Dinosaur
     
     def run_game(self):
         self.display_welcome()
-        self.battle_phase()
+        self.battle_phase(self)
         self.display_winner()
 
-    def display_welcome(self):
+    def display_welcome():
         print('Welcome to Robots vs Dinosaurs!')
 
     def battle_phase(self):
-        robot = self.robot 
         dinosaur = self.dinosaur
+        robot = self.robot
         while robot.health != 0 or dinosaur.health != 0:
-            robot.attack()
-            dinosaur.attack
+            robot.attack(dinosaur)
+            dinosaur.attack(robot)
             if robot.health == 0:
                 print(f'{robot.name} has been knocked out.')
                 break
             else:
-                dinosaur.health == 0
-                print(f'{dinosaur.name} has been knocked out!')
+                self.dinosaur.health == 0
+                print(f'{self.dinosaur.name} has been knocked out!')
                 break
             
     
     def display_winner(self):
-        robot = self.robot
-        dinosaur = self.dinosaur
-        if robot.health == 0:
-            print(f'{dinosaur.name} won!')
+        if self.robot.health == 0:
+            print(f'{self.dinosaur.name} won!')
         else:
-            dinosaur.health == 0
-            print(f'{robot.name} won!')
+            self.dinosaur.health == 0
+            print(f'{self.robot.name} won!')
 
         

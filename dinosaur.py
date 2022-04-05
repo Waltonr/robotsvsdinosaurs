@@ -1,4 +1,3 @@
-from robot import Robot
 
 class Dinosaur:
     def __init__(self, name, attack_power):
@@ -6,8 +5,7 @@ class Dinosaur:
         self.health = 100
         self.attack_power = attack_power
     
-    def attack(self, robot):
-        robot = Robot 
+    def attack(self, robot): 
         print(f'{self.name} attacks {robot.name}!')
         robot.health -= self.attack_power
         
